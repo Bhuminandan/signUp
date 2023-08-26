@@ -13,9 +13,12 @@ let password;
 
 // Getting the elements from the local storage with additional check
 if (localStorage.getItem("accessToken")) {
-    nam = localStorage.getItem("nam");
-    email = localStorage.getItem("email");
-    password = localStorage.getItem("password");
+    // Getting user details OBJ
+    let userDetails = JSON.parse(localStorage.getItem("userDetails"));
+    console.log(userDetails)
+    nam = userDetails.nam;
+    email = userDetails.email;
+    password = userDetails.email;
     updateInfo();
 } else {
     window.location.href = "../index.html";
@@ -31,9 +34,7 @@ function updateInfo() {
 
 // Adding funcionality to the LOGOUT btn
 logOutBtn.addEventListener("click", () => {
-    localStorage.setItem("nam", null);
-    localStorage.setItem("email", null);
-    localStorage.setItem("password", null);
+    localStorage.setItem("userDetails", null);
     localStorage.removeItem("accessToken");
     window.location.href = "../index.html";
 
@@ -45,11 +46,15 @@ logOutBtn.addEventListener("click", () => {
 })
 
 
-
+// Adding functionality to the header profile btn
 profileHeader.addEventListener("click", () => {
     location.reload();
 });
 
+
+// Adding functionality to the header signup btn
 signUpHeader.addEventListener("click", () => {
     window.location.href = "../index.html"
 });
+
+

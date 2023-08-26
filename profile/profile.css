@@ -7,6 +7,7 @@
   background-color: black;
   color: white;
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 img {
@@ -69,6 +70,7 @@ body {
   flex-direction: column;
   gap: 20px;
 }
+
 .log-out {
   padding: 10px 20px;
   background-color: white;
@@ -93,4 +95,44 @@ body {
   display: flex;
   align-items: center;
   gap: 50px;
+}
+
+@media (max-width: 923px) {
+  .user-details-container {
+    font-size: 24px;
+    width: 80vw;
+  }
+  .log-out {
+    width: 80%;
+  }
+  .user-details-container div {
+    max-width: 500px;
+  }
+  .header-left {
+    font-size: 2.5vh;
+  }
+
+  .header-right {
+    font-size: 2.4vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .log-out {
+    width: 100%;
+  }
+  .user-details-container div {
+    max-width: 300px;
+  }
+  .user-details-container {
+    font-size: 18px;
+    width: 95vw;
+  }
+  .header-left {
+    font-size: 2vh;
+  }
+
+  .header-right {
+    font-size: 2vh;
+  }
 }

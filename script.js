@@ -53,11 +53,19 @@ function handleSignUp() {
     // generating ramdon 16 degit access token
     let accessToken = Math.floor(Math.random() * 10000000000000000);
 
+    // Createing User Details Obj
+    let userDetails = {
+        nam: nameInput.value,
+        email: emailInput.value,
+        password: passwordInput.value,
+    }
+
     // Setting the user details in local storage
     localStorage.setItem("accessToken", accessToken);
-    localStorage.setItem("nam", nameInput.value);
-    localStorage.setItem("email", emailInput.value);
-    localStorage.setItem("password", passwordInput.value);
+    // localStorage.setItem("nam", nameInput.value);
+    // localStorage.setItem("email", emailInput.value);
+    // localStorage.setItem("password", passwordInput.value);
+    localStorage.setItem("userDetails", JSON.stringify(userDetails));
 
     // redirecting the user to profile page
     window.location.href = "./profile/profile.html"
