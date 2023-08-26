@@ -97,11 +97,19 @@ body {
   gap: 50px;
 }
 
+#profile {
+  font-size: 40px;
+}
+
 @media (max-width: 923px) {
   .user-details-container {
     font-size: 24px;
     width: 80vw;
   }
+  #profile {
+    font-size: 32px;
+  }
+
   .log-out {
     width: 80%;
   }
@@ -121,6 +129,10 @@ body {
   .log-out {
     width: 100%;
   }
+  #profile {
+    font-size: 26px;
+  }
+
   .user-details-container div {
     max-width: 300px;
   }

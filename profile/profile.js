@@ -15,7 +15,6 @@ let password;
 if (localStorage.getItem("accessToken")) {
     // Getting user details OBJ
     let userDetails = JSON.parse(localStorage.getItem("userDetails"));
-    console.log(userDetails)
     nam = userDetails.nam;
     email = userDetails.email;
     password = userDetails.email;

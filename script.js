@@ -50,6 +50,8 @@ function handleSignUp() {
         Cerror.style.display = 'none';
     }
 
+    Success.style.display = 'block';
+
     // generating ramdon 16 degit access token
     let accessToken = Math.floor(Math.random() * 10000000000000000);
 
@@ -68,28 +70,34 @@ function handleSignUp() {
     localStorage.setItem("userDetails", JSON.stringify(userDetails));
 
     // redirecting the user to profile page
-    window.location.href = "./profile/profile.html"
+    setTimeout(() => {
+        window.location.href = "./profile/profile.html";
+    }, 1000)
 
     // removing unnessasary event listerns
     signUpBtn.removeEventListener("click", handleSignUp, true);
-    profileHeader.removeEventListener("click", _listener, true);
-    signUpHeader.removeEventListener("click", _listener, true);
+    profileHeader.removeEventListener("click", handleProfileHeader, true);
+    signUpHeader.removeEventListener("click", handleSignUpHandle, true);
 }
 
 // Adding functionality to the header profile btn
-profileHeader.addEventListener("click", () => {
+profileHeader.addEventListener("click", handleProfileHeader);
+
+function handleProfileHeader() {
     if (localStorage.getItem("accessToken")) {
         window.location.href = "./profile/profile.html"
     } else {
         alert("Sign Up Required!")
     }
-});
-
+}
 
 // Adding functionality to the header signup btn
-signUpHeader.addEventListener("click", () => {
+signUpHeader.addEventListener("click", handleSignUpHandle);
+
+function handleSignUpHandle() {
     location.reload();
-});
+}
+
 
 // checking validity  of email adress
 const validateEmail = (email) => {

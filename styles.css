@@ -122,6 +122,11 @@ input:not(:placeholder-shown) + label {
   display: none;
 }
 
+.success span {
+  font-size: 14px;
+  color: #fff;
+}
+
 .signUpBtn {
   padding: 10px 20px;
   background-color: white;
